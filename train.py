@@ -69,6 +69,7 @@ def _create_confusion_matrix(trues, predictions):
     plt.xticks(size=12)
     ax.set_xlabel('Predicted Label', size=14)
     ax.set_ylabel('True Label', size=14)
+    plt.show()
 
 
 def run():
