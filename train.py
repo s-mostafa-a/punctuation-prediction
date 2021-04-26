@@ -72,8 +72,13 @@ def _create_confusion_matrix(trues, predictions):
     plt.show()
 
 
-def run():
+def download_model():
     model = _get_model()
+    model.save_model(model=model.model, output_dir=OUTPUT_DIR)
+
+
+def run():
+    model = _get_model(path_to_model_checkpoint="PATH/TO/MODEL/DIR")
     for i in range(NUMBER_OF_TRAIN_EPOCHS):
         model = _train_one_epoch(model)
         trues, predictions = _eval_model(model)
